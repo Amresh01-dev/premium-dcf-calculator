@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium DCF Calculator - Indian Stocks</title>
+    <meta name="description" content="A state-of-the-art Discounted Cash Flow (DCF) calculator to find the intrinsic value of Indian stocks.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <h1>Intrinsic Value <span class="highlight">DCF Calculator</span></h1>
+            <p>Calculate the true worth of Indian Equities with precision.</p>
+        </header>
+
+        <div class="calculator-grid">
+            <section class="card input-section">
+                <h2>Financial Inputs</h2>
+                
+                <div class="search-container">
+                    <label for="stock-search">Search Stock (NSE/BSE)</label>
+                    <input type="text" id="stock-search" placeholder="e.g. RELIANCE, TCS..." autocomplete="off">
+                    <ul id="autocomplete-list" class="autocomplete-list"></ul>
+                </div>
+
+                <div class="input-group">
+                    <label for="current-fcf">Current Free Cash Flow (FCF) <span class="unit">₹ Crores</span></label>
+                    <input type="number" id="current-fcf" placeholder="e.g. 15000" step="any">
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="growth-rate-1-5">Growth Rate (Years 1-5) <span class="unit">%</span></label>
+                        <input type="number" id="growth-rate-1-5" value="15" step="any">
+                    </div>
+                    <div class="input-group">
+                        <label for="growth-rate-6-10">Growth Rate (Years 6-10) <span class="unit">%</span></label>
+                        <input type="number" id="growth-rate-6-10" value="10" step="any">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="discount-rate">Discount Rate (WACC) <span class="unit">%</span></label>
+                        <input type="number" id="discount-rate" value="12" step="any">
+                    </div>
+                    <div class="input-group">
+                        <label for="terminal-growth">Terminal Growth Rate <span class="unit">%</span></label>
+                        <input type="number" id="terminal-growth" value="5" step="any">
+                    </div>
+                </div>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="shares-outstanding">Shares Outstanding <span class="unit">Crores</span></label>
+                        <input type="number" id="shares-outstanding" placeholder="e.g. 676" step="any">
+                    </div>
+                    <div class="input-group">
+                        <label for="current-price">Current Price <span class="unit">₹</span></label>
+                        <input type="number" id="current-price" placeholder="e.g. 2500" step="any">
+                    </div>
+                </div>
+
+                <button id="calculate-btn" class="primary-btn">Calculate Intrinsic Value</button>
+            </section>
+
+            <section class="card results-section">
+                <h2>Valuation Results</h2>
+                
+                <div class="result-display">
+                    <p class="result-label">Intrinsic Value per Share</p>
+                    <h3 id="intrinsic-value">₹ 0.00</h3>
+                    <p id="valuation-status" style="margin-top: 10px; font-weight: bold; font-size: 1.1rem;"></p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-box">
+                        <p class="metric-name">PV of Free Cash Flows</p>
+                        <p class="metric-value" id="pv-fcf">₹ 0.00</p>
+                    </div>
+                    <div class="metric-box">
+                        <p class="metric-name">Terminal Value</p>
+                        <p class="metric-value" id="terminal-val">₹ 0.00</p>
+                    </div>
+                    <div class="metric-box">
+                        <p class="metric-name">PV of Terminal Value</p>
+                        <p class="metric-value" id="pv-terminal-val">₹ 0.00</p>
+                    </div>
+                    <div class="metric-box highlight-box">
+                        <p class="metric-name">Total Enterprise Value</p>
+                        <p class="metric-value" id="total-ev">₹ 0.00</p>
+                    </div>
+                </div>
+
+                <div class="chart-container" id="cashflow-chart-container">
+                    <!-- A simple CSS visual representation could go here -->
+                    <div class="empty-state">Enter data to see projection</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
