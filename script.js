@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             // Append .NS if the user didn't type an exchange suffix
             const querySymbol = symbol.includes('.') ? symbol : `${symbol}.NS`;
-            const response = await fetch(`http://localhost:5050/api/stock/${querySymbol}`);
+            const response = await fetch(`/api/stock/${querySymbol}`);
             if(response.ok) {
                 const data = await response.json();
                 if (data.error) {
