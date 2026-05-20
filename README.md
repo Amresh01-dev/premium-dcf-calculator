@@ -4,7 +4,7 @@ A comprehensive Discounted Cash Flow (DCF) calculator application for financial 
 
 ## Overview
 
-The Premium DCF Calculator is a powerful tool designed to help investors and financial analysts perform detailed DCF valuations. It provides a streamlined interface for calculating intrinsic value based on projected cash flows and discount rates.
+The Premium DCF Calculator is a powerful tool designed to help investors and financial analysts perform detailed DCF valuations. It provides a streamlined interface for calculating intrinsic value [...]
 
 ## Features
 
